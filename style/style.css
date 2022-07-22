@@ -1,0 +1,326 @@
+* {
+    box-sizing: border-box;
+    font-family: monospace;
+    overflow: hidden;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 80%;
+    margin: auto;
+}
+body{
+    display: flex;
+    flex-direction: column;
+}
+section {
+    display: grid;
+    grid-template-areas:
+        "h1 h1 h1 h1"
+        "resultado resultado resultado resultado"
+        "limpar divisao multiplicacao subtracao"
+        "sete oito nove soma"
+        "quatro cinco seis soma"
+        "um dois tres igual"
+        "zero zero apagar igual"
+    ;
+    grid-template-columns:  25% 25% 25% 25%;
+    grid-template-rows: 8% 13% 13% 13% 13% 13% 13%;
+    width: 30%;
+    height: 100vh;
+}
+h1 {
+    grid-area: h1;
+    color: rgb(250, 106, 33);
+    font-weight: bold;
+    font-family: "Courier";
+    font-size: 28px;
+    margin: 10px 0 0 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 30em;
+    animation: type 4s steps(60, end) infinite;
+}
+
+h1 span {
+    animation: blink 1s infinite;
+}
+
+@keyframes type {
+    from {
+        width: 0;
+    }
+}
+
+@keyframes blink {
+    to {
+        opacity: .0;
+    }
+}
+
+/*Definindo o grid*/
+.resultado {
+    grid-area: resultado;
+}
+
+.limpar {
+    grid-area: limpar;
+}
+
+.divisao {
+    grid-area: divisao;
+}
+
+.multiplicacao {
+    grid-area: multiplicacao;
+}
+
+.subtracao {
+    grid-area: subtracao;
+}
+
+.sete {
+    grid-area: sete;
+}
+
+.oito {
+    grid-area: oito;
+}
+
+.nove {
+    grid-area: nove;
+}
+
+.soma {
+    grid-area: soma;
+}
+
+.quatro {
+    grid-area: quatro;
+}
+
+.cinco {
+    grid-area: cinco;
+}
+
+.seis {
+    grid-area: seis;
+}
+
+.um {
+    grid-area: um;
+}
+
+.dois {
+    grid-area: dois;
+}
+
+.tres {
+    grid-area: tres;
+}
+
+.igual {
+    grid-area: igual;
+}
+
+.zero {
+    grid-area: zero;
+}
+
+.apagar {
+    grid-area: apagar;
+}
+
+/*Estilizando botões e inputs*/
+
+.botaoLimpar,
+.botaoDivisao,
+.botaoMultiplicacao,
+.botaoSubtracao,
+.botaoSete,
+.botaoOito,
+.botaoNove,
+.botaoSoma,
+.botaoQuatro,
+.botaoCinco,
+.botaoSeis,
+.botaoIgual,
+.botaoUm,
+.botaoDois,
+.botaoTres,
+.botaoZero,
+.botaoApagar {
+    transition: 0.3s ease-in-out;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 19px;
+}
+.resultado{
+    margin-bottom: 2%;
+}
+/*White theme*/
+.botaoIgual {
+    transition: 0.3s ease-in-out;
+    background-color: rgb(250, 106, 33);
+    border: 1px solid rgb(250, 106, 33);
+    color: white;
+}
+.botaoIgual:hover{
+    background-color: rgb(209, 98, 43);
+}
+
+.inputResultado::placeholder{
+    color: rgb(255, 175, 134);
+    font-size: 28px;
+}
+.theme{
+    width:12%;
+    transition: 0.3s;
+    margin-right: 5%;
+    background-color: black;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 8px;
+    border: none;
+    margin: auto;
+    margin-top: 2%;
+}
+.theme:hover{
+    transform: scale(1.05);
+}
+.theme:active{
+    background-color: grey;
+    color: black;
+}
+.whiteNum{
+    transition: 0.3s ease-in-out;
+    width: 100%;
+    height: 100%;
+    color: rgb(27, 24, 24);
+    background-color: rgb(248, 248, 248);
+    border: 1px solid rgb(230, 230, 230);
+}
+.whiteNum:hover,.whiteOp:hover{
+    background-color: rgb(230, 228, 228);
+}
+.whiteNum:active,.whiteOp:active{
+    background-color: rgb(252, 112, 36);
+    color: black;
+}
+.whiteOp{
+    transition: 0.3s ease-in-out;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(248, 248, 248);
+    border: 1px solid rgb(230, 230, 230);
+    color: rgb(250, 106, 33);
+}
+.whiteInput{
+    transition: 0.3s;
+    font-size: 35px;
+    border: 1px solid rgb(230, 230, 230);
+    padding-left: 5%;
+    padding-bottom: 10%;
+    height: 100%;
+    width: 100%;
+    outline: none;
+}
+/*Dark theme*/
+.darkNum{
+    transition: 0.3s;
+    width: 92%;
+    height: 92%;
+    color: rgb(255, 255, 255);
+    background-color: rgb(102, 101, 101);
+    border: none;
+    border-radius: 50%;
+}
+.darkNum:hover{
+    background-color: rgb(161, 160, 160);
+}
+.darkOp{
+    transition: 0.3s ease-in-out;
+    width: 92%;
+    height: 92%;
+    background-color: rgb(250, 106, 33);
+    border: none;
+    border-radius: 50%;
+    color: white;
+}
+.darkMaior{
+    width: 95%;
+    height: 95%;
+    background-color: rgb(250, 106, 33);
+    border: none;
+    border-radius: 500px;
+    color: white;
+}
+.darkMaior:hover,.darkOp:hover{
+    background-color: rgb(209, 98, 43);
+}
+.darkInput{
+    transition: 0.3s;
+    border: none;
+    color: white;
+    font-size: 35px;
+    background-color: rgb(75, 73, 73);
+    margin-bottom: 10px;
+    padding-left: 5%;
+    padding-bottom: 15%;
+    height: 100%;
+    width: 100%;
+    outline: none;
+}
+.darkZero{
+    width: 95%;
+    height: 95%;
+    color: rgb(255, 255, 255);
+    background-color: rgb(102, 101, 101);
+    border: none;
+    border-radius: 500px;
+}
+.darkZero:hover{
+    background-color: rgb(161, 160, 160);
+}
+.themeDark{
+    width:12%;
+    transition: 0.3s;
+    margin-right: 5%;
+    background-color: rgb(231, 228, 228);
+    color: rgb(5, 5, 5);
+    font-size: 18px;
+    font-weight: bold;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 8px;
+    border: none;
+    margin: auto;
+    margin-top: 2%;
+}
+.themeDark:hover{
+    transform: scale(1.05);
+}
+.themeDark:active{
+    background-color: rgb(0, 0, 0);
+    color: rgb(161, 159, 159);
+}
+
+@media screen and (max-width: 420px){
+    section{
+        width: 100%;
+    }
+    .theme{
+        width: 50%;
+    }
+    .themeDark{
+        width: 50%;
+    }
+}
